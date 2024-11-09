@@ -18,6 +18,8 @@ jobs:
         - macOS-latest
         - windows-latest
     runs-on: ${{ matrix.os }}
+    env:
+      REDIS_URL: ${{ secrets.REDIS_URL }}
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - uses: actions/setup-go@41dfa10bad2bb2ae585af6ee5bb4d7d973ad74ed # v5
@@ -43,7 +45,6 @@ jobs:
       uses: goreleaser/goreleaser-action@9ed2f89a662bf1735a48bc8557fd212fa902bebf # v6
       with:
         args: release --snapshot --skip=publish --clean
-    - name: Colored Output Test
-      if: runner.os == 'Linux'
-      shell: script -q -e -c "bash {0}"
-      run: go run main.go -- main.go
+    - name: Test Redis Command
+      run: |
+        ./quarterlywin redis
