@@ -10,7 +10,7 @@ name: Build & Test
     - cron: 01 13 * * SAT
 jobs:
   test:
-    name: Lint, Build & Test
+    name: Build & Test
     strategy:
       matrix:
         os:
