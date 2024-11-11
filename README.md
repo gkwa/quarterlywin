@@ -2,7 +2,6 @@
 
 Purpose:
 
-
 ## example usage
 
 ```bash
@@ -12,14 +11,13 @@ Purpose:
 
 ## install quarterlywin
 
-
 on macos/linux:
+
 ```bash
 
 brew install gkwa/homebrew-tools/quarterlywin
 
 ```
-
 
 on windows:
 
