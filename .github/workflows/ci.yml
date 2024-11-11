@@ -7,7 +7,7 @@ name: Build & Test
     branches:
       - "*"
   schedule:
-    - cron: 01 13 * *SAT
+    - cron: 01 13 * * SAT
 jobs:
   test:
     name: Build & Test
@@ -35,7 +35,6 @@ jobs:
       - name: Lint
         uses: golangci/golangci-lint-action@971e284b6050e8a5849b72094c50ab08da042db8 # v6
         with:
-          version: v1.60
           args: --disable-all -E deadcode,errcheck,gosimple,govet,ineffassign,staticcheck,structcheck,typecheck,unused,varcheck
       - name: Build & Test
         run: |
