@@ -33,7 +33,7 @@ jobs:
         if: runner.os == 'Windows'
         run: echo "GOVERSION=$(go version)" | Out-File -FilePath $env:GITHUB_ENV -Append
       - name: Lint
-        uses: golangci/golangci-lint-action@55c2c1448f86e01eaae002a5a3a9624417608d84 # v6
+        uses: golangci/golangci-lint-action@e7fa5ac41e1cf5b7d48e45e42232ce7ada589601 # v9
         with:
           args: --timeout=3m --verbose --disable-all --enable errcheck,gosimple,govet,ineffassign,staticcheck,typecheck,unused
       - name: Build & Test
